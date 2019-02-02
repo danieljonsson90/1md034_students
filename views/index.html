@@ -4,28 +4,30 @@
     <head>
         <title>Burger Heaven</title>
         <meta charset="utf-8"/>
+        <link rel = "defaultstyle" type="text/css" href="webpages/css/default.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
-    <body>
-<main id="headline">
-<h1>Välkommen till Burger Heaven</h1>
-</main>
+        <body>
+            <main>
+                <h1 id = "rubrik">Välkommen till Burger Heaven</h1>
+            
 <section id="burgers">
-<h3>Välj din burgare</h3>
-<p>Här finns alla våra burgare </p>
-<table>
-    <thead>
-        <tr>
+<h3 class = "burgare">Välj din burgare</h3>
+<p class = "burgare">Här finns alla våra burgare </p>
+
+    <table align = "center">
+        <thead>
+            <tr>
             <th><h4>Flagship Burger</h4></th>
             <th>Double Cheese</th>
             <th>Nasty Joe</th>
-        </tr>
-    </thead>
+            </tr>
+        </thead>
             <tbody>
-    <tr>    
-        <td><img src="https://as1.ftcdn.net/jpg/00/94/92/10/500_F_94921053_Lc06uabhNtMNSKq6H5gBhZVDoI6nKjXW.jpg" alt="Hamburgare" title="Flagskeppet" width="500"></td>
-        <td><img src ="https://image.shutterstock.com/z/stock-photo-double-cheeseburger-with-tomato-and-onion-379861645.jpg" alt ="cheese Burger" title="Mums" width ="500"></td>
-        <td><img src ="https://image.shutterstock.com/z/stock-photo-bacon-burger-with-beef-patty-on-wooden-table-215936923.jpg" alt ="Halloumi" title = "Nasty Joe" width = "500"></td>
+                <tr align = "center">    
+        <td><img src="https://as1.ftcdn.net/jpg/00/94/92/10/500_F_94921053_Lc06uabhNtMNSKq6H5gBhZVDoI6nKjXW.jpg" alt="Hamburgare" title="Flagskeppet" width="100"></td>
+        <td><img src ="https://image.shutterstock.com/z/stock-photo-double-cheeseburger-with-tomato-and-onion-379861645.jpg" alt ="cheese Burger" title="Mums" width ="100"></td>
+        <td><img src ="https://image.shutterstock.com/z/stock-photo-bacon-burger-with-beef-patty-on-wooden-table-215936923.jpg" alt ="Halloumi" title = "Nasty Joe" width = "100"></td>
     </tr>
     <tr align = "center" class="Allergens" id="matinfo">     
         <ul><td ><li >Gluten, Laktos</li></td>
@@ -45,28 +47,29 @@
             </table>
 
 </section>
-<section>
+<section id = "leverans">
 <h3>Din leveransinformation</h3>
 <p>Här fyller du i din leveransinformation</p>
 <p>
-        <section id="contact">
-            <form>
-        <label for="First- and Last name">Fullname</label><br>
-        <input id="First- and Last name" name="fist and last" required="required" placeholder="First- and Last name" type="text">
-    </p>
-    <p>
-        <label for="Email">Email</label><br>
-        <input id="Email" name="em" placeholder="Email address" type="text">
-    </p>
-    <p>
+        
+    <form>
+        <p>
+            <label for="First- and Last name">Fullname</label><br>
+            <input id="First- and Last name" name="fist and last" required="required" placeholder="First- and Last name" type="text">
+        </p>
+        <p>
+            <label for="Email">Email</label><br>
+            <input id="Email" name="em" placeholder="Email address" type="text">
+        </p>
+        <p>
             <label for="Street">Street</label><br>
             <input id="Street" name="strt" placeholder="Street name" type="text">    
-    </p>
-    <p>
+        </p>
+        <p>
             <label for="House">House</label><br>
             <input id="House" name="hs" placeholder="House number" type="text">    
-    </p>
-    <p>
+        </p>
+        <p>
             <label for="Payment options">Payment options</label><br>
             <select id="Payment options" name="pmt">
                 <option>Card</option>
@@ -74,17 +77,15 @@
                 <option>Billl</option>
             </select>
         </p>
-    </section>
-    <section>
         <p>
             <h4>Gender</h4>
-        <label>
+
                 <input type="radio" checked="checked" name = "gender" value ="Male"> Male<br>
                 <span class="checkmark"></span>
-            </label>
+            
         </p>   
         <p>
-              <label>
+        
                 <input type="radio" name = "gender" value ="Female"> Female<br>
                 <span class="checkmark"></span>
               </label>
@@ -99,14 +100,21 @@
            
         </form>
         <p align = "center">
-                <button type="Submit"><img src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwik_5_a6ZfgAhXCFCwKHbjJDRgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.oyessaugus.com%2Fblog%2Flight-and-healthy-dishes-that-you-can-order-for-a-night-at-home&psig=AOvVaw31iiexDuQRbC2br9X7P0GM&ust=1549017276437276" width="20"> 
-                    Send order</button> 
+                <button type="Submit"> 
+                    Send order
+                </button> 
                 </p>
-</section>   
+
 </section>
+</main>
+</body>
 <footer>
-        <p> 	&copy; Burger Heaven</p>
-        <p>Contact information: <a href="mailto:burgerheaven@example.com">
-        burgerheaven@example.com</a>.</p></footer>
-    </body>
+        <p align = "center" >
+            &copy; Burger Heaven
+        </p>
+        <p align = "center">
+        Contact information: <a href="mailto:burgerheaven@example.com">burgerheaven@example.com</a>.
+        </p>
+    </footer>
+    
 </html>
