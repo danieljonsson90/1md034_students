@@ -1,5 +1,48 @@
 @import url("reset.css");
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Dosis");
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 6vw;
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 500px 500px 500px;
+    /*grid-template-rows: 500px 500px;*/
+    background-color:black;
+    color: #444;
+}
+
+.box {
+    background-color:black;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+
+}
+
+.a {
+    grid-column: 1;
+}
+.b {
+    grid-column: 2 ;
+    grid-row: 1;
+}
+.c {
+    grid-column: 3 ;
+    grid-row: 1 ;
+}
+.d {
+    grid-column: 1 ;
+    grid-row: 2 ;
+}
+
+.e {
+    text-align: center;
+}
+
 
 body {
     font-family: Arial;
@@ -10,14 +53,32 @@ body {
     color: white;
 }
 
+.wrapper {
+    text-align: center;
+}
+
 #matinfo {
     font-weight: bold;
+}
+
+#head {
+    height: 320px;
+    overflow: hidden;
+}
+
+#head_image {
+    width: 98.75%;
+    height: auto;
+    margin-left: 10px;
+    opacity: 0.6;
 }
 
 #burgers {
     background-color: black;
     color: white;
     border-style: dashed;
+    margin-left: 50px;
+    margin-right: 50px;
     padding: 100px;
 }
 
@@ -28,11 +89,15 @@ body {
 }
 
 #rubrik {
-    margin: 75px;
+    margin: 50px;
+    position: absolute;
+    padding: 100px;
+    margin-top: -52%;
+    margin-left:300px;
 }
 
 .burgare {
-    color:yellow; /*identiteten burgers har högre prio än classen burgare. JU mer specifikt desstu högre prio verkar det som*/
+    color:white; /*identiteten burgers har högre prio än classen burgare. JU mer specifikt desstu högre prio verkar det som*/
     width: 100%;
     margin-left: 100px;
 }
@@ -43,8 +108,8 @@ button:hover {
 }
 
 table {
-    background-color: aqua;
-    width: 50%;
+    width: 75%;
+    margin-left: 100px;
     border-style: groove;
     border-color: magenta;
     padding: 10px;
