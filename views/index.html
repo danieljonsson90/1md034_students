@@ -1,116 +1,120 @@
 
 <!DOCTYPE html>
 <html lang="en">
+        
+
     <head>
         <title>Burger Heaven</title>
         <meta charset="utf-8"/>
+        <script src="https://vuejs.org/js/vue.js" defer></script>
         <link rel = "defaultstyle" type="text/css" href="webpages/css/default.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/menu.js" defer></script>
+        <script src="js/js_script.js" defer></script>
+        <script src="js/vue_script.js" defer></script>
     </head>
         <body>
+           <div id="mainId">
+               <template>
             <main>
                 
                 <header id ="head">
                     <figure  align ="center">
-                        <img src = "https://i.pinimg.com/originals/70/6f/28/706f281185a1aaf62f59f7abbb76bdc1.png" title="BurgerHeaven", id ="head_image">
+                        <img src = "https://i.pinimg.com/originals/70/6f/28/706f281185a1aaf62f59f7abbb76bdc1.png" title="BurgerHeaven" id ="head_image">
                     </figure>
-                    <h1 id = "rubrik" >Välkommen till Burger Heaven</h1>
+                    <h1 id = "rubrik" >Valkommen till Burger Heaven</h1>
                 </header>
                 
 
 <section id="burgers">
-<h3 class = "burgare">Välj din burgare</h3>
-<p class = "burgare">Här finns alla våra burgare </p>
-
-<div class="wrapper">
-    <div class="box a">
-        <h4>Flagship Burger</h4>
-        <img src="https://as1.ftcdn.net/jpg/00/94/92/10/500_F_94921053_Lc06uabhNtMNSKq6H5gBhZVDoI6nKjXW.jpg" alt="Hamburgare" title="Flagskeppet" width="400">
+<div>
+<!--<h3 class = "burgare">Valj din burgare</h3>-->
+<h1 class = "burgare">Valj din burgare </h1>
+<p class = "burgare">Har finns alla vara burgare </p>
+</div>
+<div>
+<div id ="wrapper"> 
+    <div  v-for="burger in food">
+        <div class = "loop"> 
+            <h4><input type="checkbox" :name="burger.burgername" :value="burger.burgername" v-model="Choise"> {{burger.burgername}}</h4>
+            <img v-bind:src = "burger.img":alt="burger.burgername" :title="burger.burgername" style="width: 400px;height: 300px;"> <!--v-bind == :-->
+            <ul>
+                <li class="Allergens" v-if="burger.gluten">Gluten</li>
+                <li class="Allergens" v-if="burger.lactose">Lactose</li>
+                <li> <span>kcal </span>{{burger.Calories}}</li>
+            </ul>
+        </div>
     </div>
-    <div class="box b">
-        <h4>Double Cheese</h4>
-        <img src ="https://image.shutterstock.com/z/stock-photo-double-cheeseburger-with-tomato-and-onion-379861645.jpg" alt ="cheese Burger" title="Mums" width ="400">
-
-    </div>
-    <div class="box c">
-        <h4>Nasty Joe</h4>
-        <img src ="https://image.shutterstock.com/z/stock-photo-bacon-burger-with-beef-patty-on-wooden-table-215936923.jpg" alt ="Halloumi" title = "Nasty Joe" width = "400">
-    </div>
-    <div class="box d">
-        <li >Gluten, Laktos</li>
-        <li>En riktigt saftig burgare</li>
-    </div>
-    <div class="box e">
-        <li>Gluten, Laktos</li>
-        <li>Äkta Gauda</li>
-    </div>
-    <div class="box f">
-        <li>Gluten, Laktos</li>
-        <li>För den hungriga</li>
-    </div>
-  </div>
+</div>
 
 </section>
+
 <section id = "leverans">
-<h3>Din leveransinformation</h3>
-<p>Här fyller du i din leveransinformation</p>
+    <h3>Din leveransinformation</h3>
+    <p>Har fyller du i din leveransinformation</p>
 <p>
         
     <form>
         <p>
             <label for="First- and Last name">Fullname</label><br>
-            <input id="First- and Last name" name="fist and last" required="required" placeholder="First- and Last name" type="text">
+            <input id="First- and Last name" name="fist and last" required="required" placeholder="First- and Last name" type="text" v-model="Fullname">
         </p>
         <p>
             <label for="Email">Email</label><br>
-            <input id="Email" name="em" placeholder="Email address" type="text">
+            <input id="Email" name="em" placeholder="Email address" type="text" v-model="Email">
         </p>
         <p>
             <label for="Street">Street</label><br>
-            <input id="Street" name="strt" placeholder="Street name" type="text">    
+            <input id="Street" name="strt" placeholder="Street name" type="text" v-model="Street">    
         </p>
         <p>
             <label for="House">House</label><br>
-            <input id="House" name="hs" placeholder="House number" type="text">    
+            <input id="House" name="hs" placeholder="House number" type="text" v-model="House">    
         </p>
         <p>
-            <label for="Payment options">Payment options</label><br>
-            <select id="Payment options" name="pmt">
+            <label for="Payment">Payment options</label><br>
+            <select id="Payment" name="pmt" v-model="Payment">
                 <option>Card</option>
                 <option>Swish</option>
-                <option>Billl</option>
+                <option>Bill</option>
             </select>
         </p>
-        <p>
+        
             <h4>Gender</h4>
 
-                <input type="radio" checked="checked" name = "gender" value ="Male"> Male<br>
+                <input type="radio" name = "gender" value ="Male" v-model="Gender"> Male<br>
                 <span class="checkmark"></span>
-            
-        </p>   
-        <p>
         
-                <input type="radio" name = "gender" value ="Female"> Female<br>
+                <input type="radio" name = "gender" value ="Female" v-model="Gender"> Female<br>
                 <span class="checkmark"></span>
               </label>
-        </p> 
-        <p>  
+        
+         
               <label>
-                <input type="radio" name = "gender" value ="Other"> Other<br>                
+                <input type="radio" name = "gender" value ="Other" v-model="Gender"> Other<br>                
                 <span class="checkmark"></span>
               </label>
-        </p>
+        
        
            
         </form>
         <p align = "center">
-                <button type="Submit"> <img src = "http://static1.squarespace.com/static/5a02606abce1766d207a3ac9/5a0b7433f9619a162489a1f1/5a5539f4c83025c11eae708a/1547669501687/?format=1500w"> 
+                <button type="Submit" v-on:click="updateFunction"> <img src = "http://static1.squarespace.com/static/5a02606abce1766d207a3ac9/5a0b7433f9619a162489a1f1/5a5539f4c83025c11eae708a/1547669501687/?format=1500w"> 
                     Send order>
-                </button> 
+                </button> <br><br>
+                Tack för din beställning!
                 </p>
-
+                <p>
+                    <p> Bekräftelse information:</p>
+                    <div v-for="index in form">
+                        {{index}}
+                    </div>
+                </p>
 </section>
 </main>
+</div>
+</template>
+</div>
 </body>
 <footer>
         <p align = "center" >
