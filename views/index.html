@@ -6,12 +6,18 @@
     <head>
         <title>Burger Heaven</title>
         <meta charset="utf-8"/>
-        <script src="https://vuejs.org/js/vue.js" defer></script>
         <link rel = "defaultstyle" type="text/css" href="webpages/css/default.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="css/deli-very.css">
         <script type="text/javascript" src="js/menu.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="https://vuejs.org/js/vue.js" defer></script>
         <script src="js/js_script.js" defer></script>
         <script src="js/vue_script.js" defer></script>
+        <script src="/vue/vue.js" defer></script>
+        <!-- <script src="js/deli-very.js" defer></script> -->
+        
     </head>
         <body>
            <div id="mainId">
@@ -28,7 +34,6 @@
 
 <section id="burgers">
 <div>
-<!--<h3 class = "burgare">Valj din burgare</h3>-->
 <h1 class = "burgare">Valj din burgare </h1>
 <p class = "burgare">Har finns alla vara burgare </p>
 </div>
@@ -55,48 +60,42 @@
 <p>
         
     <form>
-        <p>
-            <label for="First- and Last name">Fullname</label><br>
-            <input id="First- and Last name" name="fist and last" required="required" placeholder="First- and Last name" type="text" v-model="Fullname">
-        </p>
-        <p>
-            <label for="Email">Email</label><br>
-            <input id="Email" name="em" placeholder="Email address" type="text" v-model="Email">
-        </p>
-        <p>
-            <label for="Street">Street</label><br>
-            <input id="Street" name="strt" placeholder="Street name" type="text" v-model="Street">    
-        </p>
-        <p>
-            <label for="House">House</label><br>
-            <input id="House" name="hs" placeholder="House number" type="text" v-model="House">    
-        </p>
-        <p>
-            <label for="Payment">Payment options</label><br>
+        
+         <label for="First- and Last name">Fullname</label><br>
+            <input id="First- and Last name" name="fist and last" required="required" placeholder="First- and Last name" type="text" v-model="Fullname"><br>
+    
+    
+        <label for="Email">Email</label><br>
+            <input id="Email" name="em" placeholder="Email address" type="text" v-model="Email"><br>
+        
+        <label for="Payment">Payment options</label><br>
             <select id="Payment" name="pmt" v-model="Payment">
                 <option>Card</option>
                 <option>Swish</option>
                 <option>Bill</option>
             </select>
-        </p>
         
-            <h4>Gender</h4>
-
-                <input type="radio" name = "gender" value ="Male" v-model="Gender"> Male<br>
+        <h1> Click in the map! </h1>
+            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+            <div class="view-box">
+                  <div id="dots" v-on:click="addOrder">
+                      <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                        {{key}}
+                      </div>
+                  </div>  
+            </div>
+        
+        <h4>Gender</h4>
+            
+            <input type="radio" name = "gender" value ="Male" v-model="Gender"> Male<br>
                 <span class="checkmark"></span>
         
-                <input type="radio" name = "gender" value ="Female" v-model="Gender"> Female<br>
+            <input type="radio" name = "gender" value ="Female" v-model="Gender"> Female<br>
                 <span class="checkmark"></span>
-              </label>
-        
+            
+            <input type="radio" name = "gender" value ="Other" v-model="Gender"> Other<br>                
+                <span class="checkmark"></span>
          
-              <label>
-                <input type="radio" name = "gender" value ="Other" v-model="Gender"> Other<br>                
-                <span class="checkmark"></span>
-              </label>
-        
-       
-           
         </form>
         <p align = "center">
                 <button type="Submit" v-on:click="updateFunction"> <img src = "http://static1.squarespace.com/static/5a02606abce1766d207a3ac9/5a0b7433f9619a162489a1f1/5a5539f4c83025c11eae708a/1547669501687/?format=1500w"> 
