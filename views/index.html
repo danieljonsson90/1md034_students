@@ -16,7 +16,6 @@
         <script src="js/js_script.js" defer></script>
         <script src="js/vue_script.js" defer></script>
         <script src="/vue/vue.js" defer></script>
-        <!-- <script src="js/deli-very.js" defer></script> -->
         
     </head>
         <body>
@@ -78,9 +77,9 @@
         <h1> Click in the map! </h1>
             <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
             <div class="view-box">
-                  <div id="dots" v-on:click="addOrder">
-                      <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-                        {{key}}
+                  <div id="dots" v-on:click="displayOrder">
+                      <div v-for="order in orders" v-bind:style="{ left: orders.details.x + 'px', top: orders.details.y + 'px'}">
+                        T
                       </div>
                   </div>  
             </div>
@@ -98,8 +97,8 @@
          
         </form>
         <p align = "center">
-                <button type="Submit" v-on:click="updateFunction"> <img src = "http://static1.squarespace.com/static/5a02606abce1766d207a3ac9/5a0b7433f9619a162489a1f1/5a5539f4c83025c11eae708a/1547669501687/?format=1500w"> 
-                    Send order>
+                <button type="Submit" v-on:click="addOrder"> <img src = "http://static1.squarespace.com/static/5a02606abce1766d207a3ac9/5a0b7433f9619a162489a1f1/5a5539f4c83025c11eae708a/1547669501687/?format=1500w"> 
+                    Send order!
                 </button> <br><br>
                 Tack för din beställning!
                 </p>
